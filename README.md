@@ -66,8 +66,31 @@ source /etc/environment
 echo $JAVA_HOME
 ```
 
-For a sake of be safe, make a copy of clean normal Minecraft server
+Now for a sake of be safe, make a copy of clean normal Minecraft server
 
 ```sh
-tar -zcvf minecraft-original-server minecraft_server/
+tar -zcvf minecraft-original-server.tar.gz minecraft_server/
 ```
+
+And now I will switch the original Minecraft server with Spigot server
+
+```sh
+cp spigot/spigot-1.12.jar minecraft_server/server.jar
+```
+
+And restart server. Viola! Spigot server in run. But it was a simple part. Now I am gonna to extend server with BedWars plugin.
+
+## Bedwars
+
+Go to [BedWars project download page](https://dev.bukkit.org/projects/bedwars/files)
+Currently on the day of creating this tutorial current version is Bedwars v2.6.3.
+
+I created directory for plugin in /srv/plugins
+
+```sh
+ wget -O Bedwars.jar https://dev.bukkit.org/projects/bedwars/files/2490139/download
+ ```
+
+
+
+
