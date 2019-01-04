@@ -80,17 +80,99 @@ cp spigot/spigot-1.12.jar minecraft_server/server.jar
 
 And restart server. Viola! Spigot server in run. But it was a simple part. Now I am gonna to extend server with BedWars plugin.
 
-## Bedwars
+## Map
 
-Go to [BedWars project download page](https://dev.bukkit.org/projects/bedwars/files)
-Currently on the day of creating this tutorial current version is Bedwars v2.6.3.
+Download some "lobby" type map. [planetminecraft.com](https://www.planetminecraft.com/resources/projects/tag/lobby/?order=order_popularity)
+I selected [this](https://www.planetminecraft.com/project/mini-games-lobby/)
 
-I created directory for plugin in /srv/plugins
+Of coruse you can create you own one.
+
+## Set op
+
+In ops.json
+
+```json
+[
+  {
+    "uuid": "00000000-0000-0000-0000-000000000000",
+    "name": "YourNameHere",
+    "level": 4
+  }
+]
+```
+
+## Set always day
 
 ```sh
+/gamerule doDaylightCycle false
+```
+
+## Set spawn point
+
+```sh
+/mv set spawn
+```
+
+## Plugins
+
+I want to include some plugins to make server more fancy :)
+
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard)
+- [WorldEdit](https://dev.bukkit.org/projects/worldedit/)
+- [PermissionsBukkit](https://bukkit.org/threads/admn-dev-permissionsbukkit-v2-0-official-default-groups-plugin-1-5-2-r1-0.26785/)
+- [Multiverse](https://dev.bukkit.org/projects/multiverse-core)
+- [Multiverse SignPortals](https://dev.bukkit.org/projects/multiverse-signportals)
+- [Multiverse Portals](https://dev.bukkit.org/projects/multiverse-portals)
+- [VoidGenerator](https://www.spigotmc.org/resources/voidgenerator.25391/)
+- [BedWars](https://dev.bukkit.org/projects/bedwars/)
+- [SpawnTP](https://dev.bukkit.org/projects/spawntp)
+
+ [Bungee Tools](https://www.spigotmc.org/resources/bungee-tools-only-hubcommand.84/)
+
+```sh
+ wget -O WorldGuard.jar https://dev.bukkit.org/projects/worldguard/files/latest
+ wget -O WorldEdit.jar https://dev.bukkit.org/projects/worldedit/files/latest
+ wget -O PermissionEx.jar https://dev.bukkit.org/projects/permissionsex/files/latest
+ wget -O Multiverse.jar https://dev.bukkit.org/projects/multiverse-core/files/latest
+ wget -O MultiversePortals.jar https://dev.bukkit.org/projects/multiverse-portals/files/latest
+ wget -O MultiverseSignPortals.jar https://dev.bukkit.org/projects/multiverse-signportals/files/latest
  wget -O Bedwars.jar https://dev.bukkit.org/projects/bedwars/files/2490139/download
  ```
 
+Restart server to get plugins loaded. When login on server type /bukkit:plugins and it will list all loaded plugins.
 
+Note: WorldGuard works only with WorldEdit plugin installed.
 
+### Multiverse
 
+### Multiverse + VoidGenerator - Empty World
+
+```sh
+mv create MAP_NAME normal -g VoidGenerator -t FLAT
+```
+
+#### Default lobby
+
+- SpawnTP
+
+#### Create Teleport to other world
+
+Create sign and fill with:
+
+```text
+Any text
+[mv]
+world-name
+```
+
+The word "[mv]" should turns green. Then click on sign and beign teleported.
+
+### WorldEdit
+
+### Commands
+
+Items ids - https://www.minecraftinfo.com/idnamelist.htm
+Multiverse Permissions - https://github.com/Multiverse/Multiverse-Core/wiki/permissions
+
+PermissionsBukkit - https://bukkit.org/threads/admn-dev-permissionsbukkit-v2-0-official-default-groups-plugin-1-5-2-r1-0.26785/
+WorldEdit - Selection - http://wiki.sk89q.com/wiki/WorldEdit/Selection
